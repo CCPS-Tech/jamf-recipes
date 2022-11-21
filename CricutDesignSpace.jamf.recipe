@@ -5,54 +5,20 @@
 	<key>Comment</key>
 	<string>Uploads Cricut Design Space package to Jamf</string>
 	<key>Identifier</key>
-	<string>local.jamf.CricutDesignSpace_CCPS</string>
+	<string>com.github.yoxalld.jamf.CricutDesignSpace</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
 		<string>Media Center</string>
 		<key>NAME</key>
 		<string>Cricut Design Space</string>
+		<key>JCDS_MODE</key>
+		<string>True</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
 	<string>com.github.nstrauss.pkg.CricutDesignSpace</string>
-	<key>ParentRecipeTrustInfo</key>
-	<dict>
-		<key>non_core_processors</key>
-		<dict>
-			<key>SimpleJSONParser</key>
-			<dict>
-				<key>git_hash</key>
-				<string>f059ee3a0e50c7e5f6c7d9aa57c51ed6ade5cdd0</string>
-				<key>path</key>
-				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.nstrauss-recipes/Cricut Design Space/SimpleJSONParser.py</string>
-				<key>sha256_hash</key>
-				<string>29c59244800c2db11ddf2f648f64e5518ecfc4eb3b7205db90b4b0be70f54e86</string>
-			</dict>
-		</dict>
-		<key>parent_recipes</key>
-		<dict>
-			<key>com.github.nstrauss.download.CricutDesignSpace</key>
-			<dict>
-				<key>git_hash</key>
-				<string>134b665cf68e36b70abaa40ac00fdd5def5c1cb1</string>
-				<key>path</key>
-				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.nstrauss-recipes/Cricut Design Space/CricutDesignSpace.download.recipe</string>
-				<key>sha256_hash</key>
-				<string>503855bad9e0d50758b63efd6ca2c0a3f34c3f8e643dc878a98d72a0f7762065</string>
-			</dict>
-			<key>com.github.nstrauss.pkg.CricutDesignSpace</key>
-			<dict>
-				<key>git_hash</key>
-				<string>1c34da81af1329befd555d202875a51915cb7cc1</string>
-				<key>path</key>
-				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.nstrauss-recipes/Cricut Design Space/CricutDesignSpace.pkg.recipe</string>
-				<key>sha256_hash</key>
-				<string>3b8de32fd3b77bdf004faa829945d260c3ebf6171c8cba6a9bb10d7b65d2a099</string>
-			</dict>
-		</dict>
-	</dict>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -61,7 +27,7 @@
 				<key>pkg_category</key>
 				<string>%CATEGORY%</string>
 				<key>jcds_mode</key>
-				<string>True</string>
+				<string>%JCDS_MODE</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
